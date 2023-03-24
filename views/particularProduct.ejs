@@ -1,0 +1,314 @@
+<%- include('partials/header'); -%> <%# include header from partials  // commenting %>
+
+    <!-- Separation of Nav Bar and corousel  -->
+    <div class="container-fluid nav-corousel-sep">
+      <!-- <a class="mob-sep" href=""><span ><i class="fa-solid fa-ellipsis-vertical"></i></span></a> -->
+      <div class="sep-items">
+        <span>Products</span>
+        <span>Blogs</span>
+        <span>Categories</span>
+        <span>Top Sales</span>
+      </div>
+       <div class="sep-items1">
+          <a href=""><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+       </div>
+    </div>
+
+
+   
+    <div class="container product  card">
+        <div class="row ">
+            <div class="col-lg-4 product_image">
+                <img src="/images/med3.png" alt="product_image">
+              </div>
+            <div class="col-lg-5 product_details">
+                    <h3> <%= result[0].name %></h3>
+                    <p class="type" >General Purpose Tablet </p>
+                    <hr>
+                    <p>
+                        <span  >MRP : </span><span class="product_mrp font-weight-bold"> <%= result[0].mrp %> </span>
+                    </p>
+                    <p>
+                        <span  >Price : </span><span class="product_price"> <strong> <%= result[0].price %></strong></span>
+                    </p>
+                    <p>Inclusive of all taxes</p>
+                    <hr>
+                    <div class="delivery_icons d-flex align-items-center  flex-row justify-content-between text-center"> 
+                        <div class="test">
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-services-delivery-img.png" alt="">
+                            <p>Fast Delivery</p>
+                        </div>
+                        <div class="test">
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-services-money-back-img.png" alt="">
+                            <p>100% Money Guarantee</p>
+                        </div>
+                        <div class="test">
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-services-24-by-7-support-img.png" alt="">
+                            <p>Online Support</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3>Description</h3>
+                    <p class="product_description">
+                      <%= result[0].description %>
+                       
+                    </p>    
+                    <hr>   
+            </div>
+
+            <div class="product_footer col-lg-3 b-d-none card  text-start">
+              <div class="delivery_address">
+               
+                <p class="text-start" >
+                  <span class="product_price"> <strong> <%= result[0].price %></strong></span>
+                </p>        
+               
+              
+           
+
+   <!-- Location -->
+
+
+
+
+<!-- Button trigger modal -->
+<div>
+    <a type="button" class="text-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa-solid fa-location-dot px-1"></i>select delivery location
+      
+    </a>
+</div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">choose your location</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start">
+          <button class="btn btn-primary"  id="button">GET Address </button>
+          <div id="container">
+
+          </div>
+          <!-- <button class="btn btn-primary">Submit</button> -->
+
+        <hr />
+        <form method="post" action="/getAddress">           
+                <p> Provide location manually</p>               
+                <input type="text" placeholder ="state" class="form-control input-sm  w-50  d-inline mb-1" name="state" /> 
+                <input type="number"  placeholder ="pin"class="form-control input-sm  w-50  d-inline mb-1" name="pin" /> 
+                <input type="text" placeholder ="district" class="form-control input-sm  w-50  d-inline  mb-1" name="district" /> 
+                <input type="text"  placeholder ="landmark" class="form-control input-sm  w-50  d-inline  mb-1" name="landmark" />             
+               <button class="addressapply">Apply</button>    
+      </form>
+ <hr />
+        </div>
+        <!-- <div class="modal-footer">
+            data-bs-dismiss="modal"
+           
+         -->
+      </div>
+    </div>
+  </div>
+
+    <!-- Location -->
+
+
+
+    <p>Deliverd in 2-3 days</p>
+</div>
+
+
+
+
+              <!-- <p>Quantity : 1</p> -->
+              <form id ='carform'  method="post" action="/add-to-cart">
+              <span > Quantity</span>
+              <span class="mb-3">
+                <select id="quantity" name="quantity"  class="form-select d-inline form-select-sm w-50" aria-label=".form-select-sm example">
+              
+                    <option  selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  
+              </span>
+             
+              
+              <p><strong>In Stock</strong></p>
+               <p class="stockText"> Sold by Cocoblu Retail and Fulfilled by Amazon.</p>
+              <div class=" text-center  mb-3">
+                <input type="hidden" name="id" value="<%= result[0].id %>" />
+                <!-- <a id="addtocart"  href="/add-to-cart/?p_id=<%= result[0].id %>" class="btn  btn-sm w-100 d-inline d-md-block btn-warning" >Add To Cart</a> -->
+                <input class="btn btn-warning w-100" type="submit" >
+              </form>
+
+               <a id="buynow" href="/orders" class="btn btn-sm  w-100  d-inline d-md-block mt-1 btn-outline-info" >Buy Now</a>
+                
+              </div>
+
+           
+            
+        </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+<!-- products --> 
+<div class="container products_disp   align-items-center">
+  <div class="row">
+    <% var i = 1; %>
+    <% var len = products[0].length %>
+    
+    <%    if (result) {  while(i < len) { %>         
+   
+   
+    <div class="col-md-3 col-sm-12">
+      
+      <div class="product_card mt-3 card p-2">
+        
+        <div class="card_header align-items-center p-2 text-center">
+          <%  %>
+          <form method="get" action="/<%= category[0][0].cat %>/<%= products[0][i].id %>"> 
+            <!-- <a  href="<%= category %>/<%= products[0][i].id %>" class="mr-0 text-primary"> -->
+              
+          
+         
+          <img src="https://cdn.pixabay.com/photo/2014/02/03/11/31/medications-257336_960_720.jpg" alt="/media/medicine-3.jpeg" class="rounded" >
+          <h6> <%= products[0][i].name %></h6>
+         
+        
+          
+          <div class="product_info ">
+              <span class="d-block ">MRP : <span style="text-decoration: line-through;"> <%= products[0][i].mrp %></span></span>
+              <span class="d-block">PRICE : <span> <%= products[0][i].price %></span></span>
+             
+
+              <input class="btn  btn-sm btn-outline-info" type="submit"  value="view more" />
+            </form>
+               
+                 
+                </a>
+              
+           
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+    <% i++  }%>  
+        </div>
+      </div>
+
+
+     
+    <% } else { %>
+      <div class="p-2 vh-100">
+        <h1 class="  m-auto ">No products</h1>
+      </div>
+          <%   }    %>
+
+
+
+
+
+
+
+
+
+
+<div>
+  <a style="border-radius: 0%; font-size: 18px;padding: 10px;background-color: #000073; margin-bottom: 0px;" class="btn btn-dark w-100" href=""  onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()">Back to top</a>
+  <!-- using js to scrool top -->
+ </div>
+<%- include('partials/footer'); -%> <%# include footer from partials  // commenting %>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<script>
+  
+
+  let btn = $('#button');
+    let container = $('#container')
+    
+
+    btn.click(  function() {
+    function success(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+       let xhr = new XMLHttpRequest();
+       xhr.open('GET',`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=3060083610634f208e72a6bf976b75fd`,true);
+        xhr.onload = function(){
+       if(this.status == 200 && this.readyState == 4){         
+                   let Name =  this.responseText;  
+                  
+                   let pin = JSON.parse(Name).results[0].components.postcode
+                   let arr = (JSON.parse(Name).results[0].formatted).split(",")
+                                //  console.log(arr[2].split('-')  )
+                      console.log( JSON.parse(Name))
+                    let district = JSON.parse(Name).results[0].components.state_district
+                    let landmark = JSON.parse(Name).results[0].components.suburb
+                      let data = {
+                        "state" : arr[3],
+                        "pin": pin,
+                        "district":district,
+                        "landmark" : landmark
+                      }
+                      console.log(data)
+                      arr = arr[3].split('-')
+                    // console.log((JSON.parse(Name).results[0].formatted));
+
+                    let getAddress = `<form method="post" action="/getAddress" >
+                      <input  type="hidden" name="state" value="${arr[0]}" required />
+                      <input type="hidden" name="pin" value="${pin}" required />
+                      <input type="hidden" name="district" value="${district}" required />
+                      <input type="hidden" name="landmark" value="${landmark}" required />
+                      <button  id="sub" class='btn btn-primary'> submit </button>
+
+                      
+                      </form
+                      `
+
+                    container.html(landmark+ ", "+  district +", " + arr[0]  +"- " +  pin + `  <br />  <br />  ${getAddress}`)
+                     $('#sub').click(function(){
+                      alert('Your Address has been updated!')
+});
+                    // container.html( landmark +" ," + JSON.parse(arr[3]) +" ," + JSON.parse(district) +" ," + JSON.parse(pin) );
+       }
+      }
+      xhr.send();
+    }
+
+    function error(err) {
+      console.log('error');
+      if(err.code === 1){
+        alert('Allow access to geolocation to get location');
+      }
+      else{
+        alert("couldn't find you")
+      }
+    }
+
+    const options = {
+      enableHighAccuracy : true,
+      timeout : 5000,
+    }
+    navigator.geolocation.getCurrentPosition(success, error,options);
+
+  })   
+
+
+   </script>
+</body>
+</html>

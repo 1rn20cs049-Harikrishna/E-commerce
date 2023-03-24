@@ -1,0 +1,231 @@
+ <%- include('partials/header'); -%> <%# include header from partials  // commenting %> 
+
+    <!-- Separation of Nav Bar and corousel  -->
+    <div class="container-fluid nav-corousel-sep ">
+      <!-- <a class="mob-sep" href=""><span ><i class="fa-solid fa-ellipsis-vertical"></i></span></a> -->
+      <div class="sep-items">
+        <span>Products</span>
+        <span>Blogs</span>
+        <span>Categories</span>
+        <span>Top Sales</span>
+       
+      </div>
+       <div class="sep-items1 align-items-center ">
+        
+       
+          <% if (typeof Name == 'undefined') {  %>  
+            <a  styel="font-family: " href="/login" class="btn">   Login</a>
+          <% }  else{ %> 
+            <a onclick="myFunction()"  href="/logout" class="btn">logout</a>
+          <% } %>
+          
+        
+        <a href="/register" class="btn">SignUp</a>
+        
+          
+          <a href="/cart-view"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+       </div>
+    </div>
+
+
+
+    <!-- corousel  -->
+    <section id="corousel" style="margin-top:20px">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/corusel1.jpg" class="d-block w-100 corousel-img" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/corousel2.jpg" class="d-block w-100 corousel-img" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/corousel3.jpg" class="d-block w-100 corousel-img"  alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+    <!-- <div class="eg">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit minima quisquam quis dolorum impedit tempora aspernatur maxime natus! Placeat repellendus tenetur animi non assumenda rerum est fuga. Quia vitae dolor, libero iusto assumenda recusandae vero similique sapiente sint rem, atque sed mollitia delectus id qui placeat debitis iste in dicta praesentium repellendus! Consectetur, molestias vel doloribus enim itaque doloremque dignissimos recusandae perferendis blanditiis nemo beatae sapiente fugiat, nostrum corporis inventore nihil molestiae nam ex! Iusto aperiam, sunt sit sint perferendis quam minus repellendus accusantium deserunt voluptatem similique perspiciatis blanditiis earum doloribus. Ex ut velit labore quae iusto provident quam molestias.
+    </div> -->
+    <!-- Categories Button -->
+    <div class="container-fluid category-button">
+        <a href="/personal-care" class="anchor-btn">Personal Care</a>
+        <a href="/child-care " class="anchor-btn">Child Care</a>
+        <a href="/medicine" class="anchor-btn">Medines</a>
+        <a href="/health-nutrition" class="anchor-btn">Health & Nutrition</a>
+        <br><br>
+        <h4>Great Collections & Exciting Offers</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, eos amet! Neque nesciunt consequatur alias laborum impedit debitis, nobis sapiente dolores dignissimos error optio doloremque nihil nisi omnis non. At quas repellat laudantium quod assumenda alias officiis. Cupiditate, neque ab!</p>
+    </div>
+
+
+
+    
+    <!-- Shop By Category -->
+    <section id="category">
+        <h4>Shop By category</h4>
+        <!-- This is done for personal; care and taken for other four also -->
+        <div class="personal-care row">
+            
+          <div class="col-lg-3 personal-care-product">
+                <div class="pc-img-container">
+                  <img src="/images/med1.png" alt=""></a>
+                </div> 
+                <div class="pc-btn">
+                  <a href="/perfumes">PERFUMES</a>
+                </div>     
+          </div>
+          <div class="col-lg-3 personal-care-product">
+            <div class="pc-img-container">
+              <img src="/images/med1.png" alt=""></a>
+            </div>
+            <div class="pc-btn">
+              <a href="/shampoo">SHAMPOO</a>
+            </div>       
+          </div>
+          <div class="col-lg-3 personal-care-product">
+            <div class="pc-img-container">
+              <img src="/images/med1.png" alt=""></a>
+            </div> 
+            <div class="pc-btn">
+              <a href="/makeup">MAKEUP</a>
+            </div>      
+          </div>
+        </div>
+        <div class="personal-care-footer">
+            <a href="/personal-care" class="anchor-btn">Shop Personal Care</a>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui nemo vel dicta, rem dignissimos, officia amet repellat commodi blanditiis quia adipisci quas odit itaque facere.</p>
+            <hr>
+        </div>
+
+     <!-- This one is medicine categroy under Shop By Categroy -->
+     <div class="personal-care row">
+            
+      <div class="col-lg-3 personal-care-product">
+            <div class="pc-img-container">
+              <img src="/images/med1.png" alt=""></a>
+            </div> 
+            <div class="pc-btn">
+              <a href="">TABLETS</a>
+            </div>     
+      </div>
+
+      <div class="col-lg-3 personal-care-product">
+        <div class="pc-img-container">
+          <img src="/images/med1.png" alt=""></a>
+        </div>
+        <div class="pc-btn">
+          <a href="">TONIC</a>
+        </div>       
+      </div>
+      <div class="col-lg-3 personal-care-product">
+        <div class="pc-img-container">
+          <img src="/images/med1.png" alt=""></a>
+        </div> 
+        <div class="pc-btn">
+          <a href="">VACCINES</a>
+        </div>      
+      </div>
+    </div>
+    <div class="personal-care-footer">
+        <a href="/medicine" class="anchor-btn">Shop Medicines</a>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui nemo vel dicta, rem dignissimos, officia amet repellat commodi blanditiis quia adipisci quas odit itaque facere.</p>
+        <hr>
+    </div>
+
+    <!-- This one is child care under shop by category -->
+    <div class="personal-care row">
+            
+      <div class="col-lg-3 personal-care-product">
+            <div class="pc-img-container">
+              <img src="/images/med1.png" alt=""></a>
+            </div> 
+            <div class="pc-btn">
+              <a href="">DIAPERS</a>
+            </div>     
+      </div>
+      <div class="col-lg-3 personal-care-product">
+        <div class="pc-img-container">
+          <img src="/images/med1.png" alt=""></a>
+        </div>
+        <div class="pc-btn">
+          <a href="">SOFT WIPES</a>
+        </div>       
+      </div>
+      <div class="col-lg-3 personal-care-product">
+        <div class="pc-img-container">
+          <img src="/images/med1.png" alt=""></a>
+        </div> 
+        <div class="pc-btn">
+          <a href="">OILS & LOTIONS</a>
+        </div>      
+      </div>
+    </div>
+    <div class="personal-care-footer">
+        <a href="/child-care" class="anchor-btn">Shop Child Care</a>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui nemo vel dicta, rem dignissimos, officia amet repellat commodi blanditiis quia adipisci quas odit itaque facere.</p>
+        <hr>
+    </div>
+    <!-- This is for Health Care  -->
+    
+    <div class="personal-care row">
+            
+      <div class="col-lg-3 personal-care-product">
+            <div class="pc-img-container">
+              <img src="/images/nutrition1.jpg" alt=""></a>
+            </div> 
+            <div class="pc-btn">
+              <a href="">PROTEINS</a>
+            </div>     
+      </div>
+      <div class="col-lg-3 personal-care-product">
+        <div class="pc-img-container">
+          <img src="/images/nutrition2.jpg" alt=""></a>
+        </div>
+        <div class="pc-btn">
+          <a href="">CEREALS</a>
+        </div>       
+      </div>
+      <div class="col-lg-3 personal-care-product">
+        <div class="pc-img-container">
+          <img src="/images/nutrition3.jpg" alt=""></a>
+        </div> 
+        <div class="pc-btn">
+          <a href="">OILS & LOTIONS</a>
+        </div>      
+      </div>
+    </div>
+    <div class="personal-care-footer">
+        <a href="/health-nutrition" class="anchor-btn">Shop Health Care</a>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui nemo vel dicta, rem dignissimos, officia amet repellat commodi blanditiis quia adipisci quas odit itaque facere.</p>
+        <hr>
+    </div>
+
+
+    </section>
+
+
+
+    <!-- Footer -->
+    <%- include('partials/footer'); -%> <%# include header from partials  // commenting %>
+    <script>
+     function  myFunction(){
+        alert('logged out')
+      }
+    </script>
+  </body>
+  </html>

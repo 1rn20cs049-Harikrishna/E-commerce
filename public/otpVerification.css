@@ -1,0 +1,9 @@
+.signin_form{
+    min-width:350px;
+    max-width:600px;
+    position: absolute;
+    top:20px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: auto;
+}

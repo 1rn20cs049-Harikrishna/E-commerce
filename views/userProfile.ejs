@@ -1,0 +1,61 @@
+<%- include('partials/header'); -%> <%# include header from partials  // commenting %>
+ <!-- user Profile card -->
+        <div class="container profile">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10 mt-5 pt-5">
+                    <div class="row">
+                        <div class="col-sm-3 bg-info rounded-left">
+                            <div class="card-block text-center text-white">
+                                <i class="fas fa-user-tie fa-7x mt-5"></i>
+                                <h5 class="user_name mt-4">Name : <%= Uname %></h5>
+                                <!-- <p>ROLE User</p> -->
+                            </div>
+                        </div>
+                        <div class="col-sm-12 bg-white mb-5" >
+                            <h4 class="m-4 " style="text-decoration: underline;">DETAILS</h4>
+                            <div style="text-align: left; " class="row ">
+                                <div class="col-sm-12 py-2">
+                                    <span class="d-block user_phone"><strong>Phone Number : </strong><%= Uphone%></span>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span class="d-block user_mail"><strong>Email : </strong><%= Uemail%></span>
+                                </div>
+                                <div class="col-sm-12 u_add  ">
+                                    
+                                    <span class="mt-2 mb-5 d-block d-flex flex-column justify-content-start  align-items-start "><strong>Address :</strong>
+                                        <br/>
+                                        
+
+                                      
+                                        <% if( Uaddress.length > 0) { %>
+                                          <%  var i = 0 %>
+                                            <% while (Uaddress.length > i ) { %>
+                                                <div style="text-align: left; color: #00008B;" class="p-2  bg-info w-100">
+                                                    <%= i+1 %>  <span > . </span> 
+                                                <%= Uaddress[i].landmark %> <span >,  </span> 
+                                                <%= Uaddress[i].district %> <span >,  </span> 
+                                                <%= Uaddress[i].state %><span > - </span> 
+                                                <%= Uaddress[i].pin %>
+                                      <%   i++   %>
+                                    </div>
+                                     <br />
+                                     <%  } } %>
+                                        
+                                        
+                                    </span>
+                                    <!-- <a href="">Add New Address</a> -->
+                                </div>
+                                <hr>
+                                <div class=" col-sm-12 ">
+                                    <a  href="cart-view" class="btn btn-success  cursor"> Carts </a>
+                                    <button class="profile_btn cursor">Purchase History</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<%- include('partials/footer'); -%> <%# include footer from partials  // commenting %>
+    </body>
+    </html>

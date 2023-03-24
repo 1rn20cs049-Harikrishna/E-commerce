@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+rel="stylesheet"
+/>
+</head>
+<body>
+  <h1 style="text-align: center;">Addmin Panel</h1>
+    <!-- UPLOAD FORM  -->
+    <section class="vh-100 gradient-custom">
+     <div class="container py-5 h-100">
+       <div class="row justify-content-center align-items-center h-100">
+         <div class="col-12 col-lg-9 col-xl-7">
+           <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+             <div class="card-body p-4 p-md-5">
+               <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Product Upload Form</h3>
+
+               <form action="" method="post" id="myform">   
+                 <div class="row">
+                   <div class="col-md-6 mb-4">                       
+                    <div class="form-outline">
+                      <input type="text" id="pname" name="productname" class="form-control form-control-lg" />
+                      <label class="form-label" for="productname">Product Name</label>
+                    </div>   
+                   </div>
+                   <div class="col-md-6 mb-4">   
+                    <div class="form-outline">
+                      <input type="text" id="productdescription" name="productdescription" class="form-control form-control-lg" />
+                      <label class="form-label" for="productdescription">Product Description</label>
+                    </div>
+                   </div>
+                 </div>   
+                 <div class="row">
+                 
+                   <div class="col-md-6 mb-4">
+   
+                     <h6 class="mb-2 pb-1">Category: </h6>
+   
+                     <div class="form-check form-check-inline">
+                       <input class="form-check-input" type="radio" name="category" id="personalcare"
+                         value="1"  />
+                       <label class="form-check-label" for="personalcare">Personal Care</label>
+                     </div>
+   
+                     <div class="form-check form-check-inline">
+                       <input class="form-check-input" type="radio" name="category" id="childcare"
+                         value="2" />
+                       <label class="form-check-label" for="childcare">Child Care</label>
+                     </div>
+   
+                     <div class="form-check form-check-inline">
+                       <input class="form-check-input" type="radio" name="category" id="healthandnutrition"
+                         value="3" />
+                       <label class="form-check-label" for="healthandnutrition">Health & Nutrition</label>
+                     </div>
+                     <div class="form-check form-check-inline">
+                         <input class="form-check-input" type="radio" name="category" id="medicines"
+                           value="4" />
+                         <label class="form-check-label" for="medicines">Medicines</label>
+                     </div>
+   
+                 </div>
+
+                 <div class="col-md-6 mb-4 d-flex align-items-center">
+   
+                  <div class="form-outline w-100">
+                    <input type="number" id="packsize" name="packsize" class="form-control form-control-lg" />
+                    <label class="form-label" for="packsize">pack-size</label>
+                  </div>
+
+   
+                   </div>
+             </div>
+   
+                 <div class="row">
+                   <div class="col-md-6 mb-4 pb-2">   
+                     <div class="form-outline">
+                       <input type="number" id="mrp" name="mrp" class="form-control form-control-lg" />
+                       <label class="form-label" for="mrp">MRP</label>
+                     </div>
+   
+                   </div>
+                   <div class="col-md-6 mb-4 pb-2">
+   
+                     <div class="form-outline">
+                       <input type="number" id="price" name="price" class="form-control form-control-lg" />
+                       <label class="form-label" for="price">Price</label>
+                     </div>
+   
+                   </div>
+                 </div>
+   
+                 <div class="row align-items-center py-3">
+                     <div class="col-md-3 ps-5">       
+                       <h6 class="mb-0">Upload Image</h6>       
+                     </div>
+                     <div class="col-md-9 pe-5">
+       
+                       <input class="form-control form-control-lg" id="formFileLg" type="file" />
+                       <div class="small text-muted mt-2">Upload Image or any other relevant file. Max file
+                         size 50 MB</div>
+       
+                     </div>
+                   </div>
+       
+                 <div class="mt-4 pt-2">
+                   <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                 </div>
+   
+               </form>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
+   
+     
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+<script>
+
+$("#myform").on('submit', function(e) {
+                e.preventDefault();
+
+                var category = $('input[name="category"]:checked').val();;
+
+  let formdata  = {
+    productname : $('#pname').val(),
+    productdescription : $('#productdescription').val(),
+    category :category,
+    mrp : $('#mrp').val(),
+    price : $('#price').val(),
+    packsize : $('#packsize').val(),
+  }
+
+   $.ajax({
+    url: '/admin',
+    type: 'POST',
+    // data: JSON.stringify(formdata),
+    data:formdata,
+    error: function(response, error) {
+        // console.log(arguments[0].state);
+          alert(JSON.parse(JSON.stringify(response.responseText)))
+    },
+
+    success: function(data) {
+      //  let message = JSON.stringify(data);
+      //   $('#submit').css('cursor', 'wait');
+       alert(data)                          
+       //window.location.href ="/verify"
+                //should check the status and redirect based on that
+     
+              
+    },
+    
+
+});
+</script>
+
+     <script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+></script>
+</body>
+</html><!-- MD BOOTSTRAP -->
+     <!-- Font Awesome -->

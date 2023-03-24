@@ -1,0 +1,72 @@
+<%- include('partials/header'); -%> <%# include header from partials  // commenting %>
+<div class="container products_disp   align-items-center">
+  <div class="row">
+    <% var i = 1; %>
+    <% var len = result[0].length %>
+    
+    <%    if (result) {  while(i < len) { %>         
+   
+   
+    <div class="col-md-3 col-sm-12">
+      
+      <div class="product_card mt-3 card">
+        
+        <div class="card_header align-items-center p-2 text-center">
+          <a  href="<%= cat %>/<%= result[0][i].id %>" class="mr-0 text-primary">
+          <img src="images/med3.png" alt="/media/medicine-3.jpeg" class="rounded" >
+          <h6> <%= result[0][i].name %></h6>     
+          <div class="product_info ">
+              <span class="d-block ">MRP : <span style="text-decoration: line-through;"><%= result[0][i].mrp %></span></span>
+              <span class="d-block">PRICE : <span><%= result[0][i].price %></span></span>            
+          </a>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <% i++  }%>  
+   
+  
+
+
+      </div>
+      </div>
+
+
+       <div class="page">
+
+      
+
+      <nav aria-label="Page navigation  example ">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="<%= cat %>?page=1 " aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="<%= cat %>?page=2">1</a></li>
+          <li class="page-item"><a class="page-link" href="<%= cat %>?page=3">2</a></li>
+          <li class="page-item"><a class="page-link" href="<%= cat %>?page=4">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="<%= cat %>?page=5" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <% } else { %>
+      <div class="p-2 vh-100">
+        <h1 class="  m-auto ">No products</h1>
+      </div>
+          <%   }    %>
+
+  <a style="border-radius: 0%; font-size: 18px;padding: 10px;background-color: #000073; margin-bottom: 0px;" class="btn btn-dark w-100" href=""  onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()">Back to top</a>
+  <!-- using js to scrool top -->
+
+
+ <%- include('partials/footer'); -%> <%# include footer from partials  // commenting %>
+
+</body>
+</html>

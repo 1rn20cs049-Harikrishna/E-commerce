@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <script src= "../index.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"> </script> -->
+    <!-- <script  src= "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js" integrity="sha512-3WFaXQUsbGieECwv3t3DvyAkZ7pp+/rIKOQnx7NKhfwIF0u2l+DYsE2eF635ewJVj3YTU4/Ug6UqEkSTZCiSew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>DaTA SELFIE APP</h1>
+    <div>
+      <a href="/">Enter</a> | <a href="all.html">list</a>
+      </div>
+      <p>
+        latitude : <span id="latitude"></span>&deg; <br />
+        longitude : <span id="longitude"></span>&deg; <br />
+        </p>
+
+        <input type="text" id="mood" value="rainbow" />
+        <button id="submit">Submit</button>
+        <script>
+function setup(){
+
+
+   noCanvas();
+
+   const video = createCapture(VIDEO);
+   video.size(1200,720);
+   video.loadPixels();
+   const image64 = video.canvas.toDataURL();
+            let lat ,lon;
+   let button  = $('#submit');
+   button.on('click',event => {
+     let mood = $('#mood').val();
+     let data = {lat,lon,mood , image64};
+
+     const options = {
+       method: 'POST',
+       headers:{
+         'Content-type':'application/json'
+       },
+       body:JSON.stringify(data)
+     };
+     const response =  fetch('/api',options);
+     const json =  response.json();
+     console.log(json);
+
+   });
+
+   if('geolocation' in navigator){
+     console.log('geolocation available');
+     navigator.geolocation.getCurrentPosition( (position) =>{
+     lat =  position.coords.latitude;
+     lon =position.coords.longitude;
+     console.log(lat,lon);
+     $('#latitude').html(lat);
+     $('#longitude').html(lon);
+   });
+ }
+   else{
+         console.log('geolocation is not avaliable');
+   }
+
+
+
+}
+        </script>
+  </body>
+</html>

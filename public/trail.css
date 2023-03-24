@@ -1,0 +1,144 @@
+body {
+    font-family: sans-serif;
+    margin: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow-x: hidden;
+    background: rgb(63, 94, 251);
+    background: linear-gradient(90deg, rgba(63, 94, 251, 1) 0%, rgba(70, 252, 195, 1) 100%);
+}
+
+
+
+.heading {
+    font-size: 28px;
+}
+
+.sign-container {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    /* flex-basis: 70%; */
+}
+
+label {
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+
+#myform input {
+
+    min-width: 400px;
+    max-width: 90%;
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
+    outline: none;
+    background-color: #fefefe;
+}
+
+.main{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    /* flex-basis:30%; */
+}
+
+.image{
+    
+   width:600px;
+    height:700px;
+     
+      padding-right: 20px;
+      padding-top: 20px;
+}
+
+.img1{
+    width:600px;
+    height:100%;
+   
+   
+    
+    object-fit: cover;
+}
+
+.link-signin {
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.link-signin:hover {
+    color: #eb4a05;
+    text-decoration: underline;
+}
+
+
+input:focus {
+    outline: none;
+    border-color: #eb7505;
+    border-width: 1px;
+    box-shadow: 0 0 10px #eb7505;
+}
+
+p {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 15px 0 20px;
+    color: #808080;
+    font-size: 12px;
+    font-family: 700;
+}
+
+p span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+.NewUser {
+    font-size: 14px;
+    /*			background-color: #ffe4e1;*/
+}
+
+.NewUser:hover {
+    /*	background-color:#f4a460 ;*/
+    outline: none;
+    border-color: red;
+    opacity: 1;
+
+}
+
+small {
+    font-size: 12px;
+
+}
+
+
+.error_container {
+    padding: 3px 4px;
+    border-style: solid;
+    border-width: 2px;
+    color: orangered;
+}
+
+.error {
+    color: rgb(41, 249, 4);
+    font-size: 12px;
+}
+
+@media screen and (max-width:600) {
+    .image{
+        display:none;
+    }
+    
+}

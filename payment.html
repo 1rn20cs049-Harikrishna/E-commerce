@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div>
+    <h1> This is payment page (Demo)</h1>
+  </div>
+    <button id="rzp-button1" style="cursor:pointer;background-color: brown; color:#fff ;padding:15px 40px ">Pay</button>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_test_5I576MHDpcDm0O", // Enter the Key ID generated from the Dashboard
+    "amount": "5000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Pharma-Dispatch",
+    "description": "Test Transaction",
+    "image": "https://images.unsplash.com/photo-1639432522665-12c11347b61a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+  //  "order_id": "rzp_test_5I576MHDpcDm0O", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+   // "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+    // "prefill": {
+    //     "name": "Gaurav Kumar",
+    //     "email": "gaurav.kumar@example.com",
+    //     "contact": "9000090000"
+    // },
+    // "notes": {
+    //     "address": "Razorpay Corporate Office"
+    // },
+    // "theme": {
+    //     "color": "#3399cc"
+    // }
+};
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+
+
+
+var instance = new Razorpay({ key_id: 'rzp_test_5I576MHDpcDm0O', key_secret: 'hari' })
+
+instance.orders.create({
+  amount: 50000,
+  currency: "INR",
+  receipt: "receipt#1",
+  notes: {
+    key1: "value3",
+    key2: "value2"
+  }
+})
+    </script>
+</body>
+</html>

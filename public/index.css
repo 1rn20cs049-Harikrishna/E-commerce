@@ -1,0 +1,558 @@
+
+body
+{
+    text-align: center;
+    background-color: #e6f6ff;
+    /* background-color: #EFF5F5; */
+}
+
+
+
+/* the css of the navigation bar */
+.navbar
+{
+    padding: 10px;
+    /* background-color:#A6BB8D; */
+    /* background-color: #61876E; */
+    background-color:#00008B ;
+    text-align: justify;
+}
+nav .navbar-brand span
+{
+    font-size:xx-large;
+    color: #EAE7B1;
+    /* font-weight:500; */
+}
+nav .navbar-brand span:hover
+{
+    color: #ffffff;
+}
+/* this below is not working */
+.navbar-toggler span
+{
+    color: #ffffff !important;
+}
+.nav-link
+{
+    color: #FCFFE7 !important;
+}
+.search
+{
+    margin-right: 2%;
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 0 1.2%;
+}
+.search-form
+{
+    margin: 0;
+}
+.search-form .form-control
+{
+    border: none;
+    /* margin-left: ; */
+}
+.search-button, .microphone
+{
+    background-color: transparent;
+    border: none;
+}
+/* .account
+{
+    background-color: #ffffff;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    text-align: center;
+} */
+/* .account span
+{
+    padding: 2%;
+    font-size: 1rem;
+    font-weight: 200;
+    color: black !important;
+    margin-top: -10px;
+} */
+.account span i{
+    font-size: 18px;
+    margin: auto;
+    background-color: #f01385;
+    border-radius:60%;
+    padding: 14px;
+}
+.mob-acc
+{
+    display: none;
+    color: #ffffff;
+}
+/* Separation Between NavBar and Corousel */
+.nav-corousel-sep
+{
+    background-color: #EFF5F5;
+    height: 5vh;
+    padding: 0.8rem;
+    margin-bottom: 0.7rem;
+}
+/* .mob-sep
+{
+    display: inline-block;
+} */
+.sep-items
+{
+    display: inline-block; 
+   position: absolute;
+    left: 5%;
+   
+    margin-left: 5px;
+}
+.sep-items span
+{
+    margin-right: 1rem;
+    /* display:flex;
+    justify-content: flex-end; */
+}
+
+
+.sep-items1
+{
+    position: absolute;
+    right: 5%;
+}
+.sep-items1 span
+{
+    margin-left: 1rem;
+    font-size: larger;
+    color: black;
+}
+/* corousel css */
+/* #corousel
+{
+    width: 60vw;
+    display: inline-block !important;
+} */
+#corousel .corousel-img
+{
+    height: 60vh;
+}
+.eg
+{
+    display: inline-block;
+}
+/* Category Buttons */
+.category-button
+{
+    /* margin: 1.5rem 0; */
+    background-color: #ffffff;
+    padding: 2rem;
+}
+
+.anchor-btn
+{
+    padding: 0.5rem;
+    border: 0.5px solid #16f7e1 ;
+    margin: 0.8rem 1rem;
+    display: inline-block;
+    text-decoration: none;
+    /* color: #61876E;    */
+    color:#16f7e1;
+    background-color: #00008B;
+    min-width: 15%;
+    font-weight: 500;
+    font-size:18px;
+    border-radius:5px;
+}
+.anchor-btn:hover
+{
+    background-color: #f01385;
+    /* background-color: #FF6700; */
+    color: #ffffff;
+    /* -webkit-box-shadow: 11px 13px 33px -12px rgba(0,0,0,0.57);
+    -moz-box-shadow: 11px 13px 33px -12px rgba(0,0,0,0.57);
+    box-shadow: 11px 13px 33px -12px rgba(0,0,0,0.57); */
+
+
+}
+.category-button p
+{
+    font-weight: 150;
+    text-align: center;
+}
+
+
+
+/* Shop By Category */
+
+#category h4
+{
+    background-color: #EFF5F5;
+    color: #439A97;
+    margin: 2rem;
+}
+
+.personal-care
+{
+    display: inline-block;
+    width: 85vw;
+    margin: auto;
+    text-align: justify;
+}
+.personal-care-product
+{
+    display: inline-block;
+    width: 30%;
+    margin: 0.8rem;
+    position: relative;
+    /* border: 0.5px solid black; */
+}
+.personal-care-product .pc-img-container
+{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+}
+.pc-img-container img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease-in;
+}
+.pc-btn
+{
+    display: inline-block;
+    position: absolute;
+    left: 10%;
+    bottom: 12%;
+}
+.pc-btn a
+{
+    border: 2px solid white;
+    padding: 0.2rem;
+    background-color: #EFF5F5;
+    color: black;
+    text-decoration: none;
+    opacity: 0.85;
+}
+.personal-care-footer
+{
+   padding: 1.5rem;
+}
+.personal-care-footer  p
+{
+    margin: 1rem;
+    font-weight: 200;
+}
+.personal-care-footer hr
+{
+    width: 70%;
+    margin: 2rem auto;
+}
+
+
+
+
+/* Footer */
+footer
+{
+    background-color:#00008B;
+    padding: 5%;
+    color: #ffff;
+    font-size:16px;
+    text-align: left;
+}
+.footer-link :hover
+{
+    /* color: #FCFDF2; */
+    /* color: #EAE7B1; */
+    color:#626567;
+    text-decoration: underline 0.5px;
+    cursor:pointer;
+
+
+}
+
+footer h5{
+    color:#16f7e1;
+}
+footer hr
+{
+    border-top-color:#EFF5F5 ;
+    
+}
+ .social-icons
+{
+    display: inline-block;
+    margin-right: 4%;
+    font-size: 1.5rem;
+   
+}
+
+ .social-icons:hover
+{  
+    color:#16f7e1;  
+    cursor:pointer;
+   
+}
+.footer-bottom{
+    background-color: #000073;
+    margin-bottom: 15px;
+    padding: 20px;
+    color:#fff;
+    font-size:16px;
+}
+.footer-bottom p{
+ color:#16f7e1;
+}
+
+
+
+/* MEDIA QUERIES */
+
+
+/* For less than Deskop 990x */
+
+@media screen and (max-width:990px)
+{
+    /* this query is written for the Account Display of nav bar in the mobile Dropdown */
+    .mob-acc
+    {
+        display: inline;
+    }
+}
+@media screen and (max-width : 480px) {
+
+    /* navigation bar */
+    .account
+    {
+        margin-top: 1.5rem;
+        font-size: 12px;
+    }
+    .account span
+    {
+        padding: 5px;
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+    /* corousel */
+    #corousel .corousel-img
+    {
+         height: 35vh;
+    }
+    /* Shop By Category */
+    #category .container .row .card
+    {
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-width : 1002px) {
+    /* This is for the personal care product for below some size */
+    .personal-care
+    {
+        text-align: center;
+        margin: auto;
+        width: 90vw;
+    }
+    .personal-care-product
+    {
+        width: 100%;
+    }
+}
+
+
+
+
+/* CART */
+.cart_product{
+    font-size:24px;
+    font-family: "Times new Roman";
+    padding:20px;
+    box-sizing:border-box;
+    
+}
+.row{
+    align-items: center;
+}
+
+
+/* product details */
+.product{
+    margin: 2rem;
+    width: 90vw;
+    font-family: "Gill Sans", sans-serif;
+    
+}
+.product_image img
+{
+    width: 100%;
+    margin-top: 1%;
+}
+.product_details
+{
+    text-align: left;
+    padding: 2rem;
+    font-size: small;
+}
+.product_details h3{
+    font-size: medium;
+}
+
+.product_details .type{
+    color:#15317E;
+    font-size:14px;
+   
+}
+.stockText{
+    font-size:16px;
+    margin-top: -16px;
+}
+.test img
+{
+    width: 3rem;
+    /* padding-top: 1.5rem; */
+}
+.test p
+{
+    font-size: small;
+}
+.product_mrp
+{
+    font-weight: 300;
+    font-size: small;
+    text-decoration: line-through;
+}
+.product_price
+{
+    font-weight: 400;
+    font-size: small;
+    /* color:#bf0000; */
+    color:#FF6700;
+}
+.product_description
+{
+    font-weight: 350;
+}
+.product_footer
+{
+    /* text-align: justify; */
+    padding: 2% 1%;
+    /* border-left: 0.5px solid; */
+}
+
+
+
+
+/* location modal */
+.product a{
+    text-decoration: none;
+    font-size:14px;
+  }
+.modal-header{
+    background-color:#f9fbfe;
+    font-size:14px;
+}
+.modal p{
+    font-size:14px;
+}
+.addressapply{
+    background-color: #f01385;
+    padding: 4px 25px;
+    border-radius: 5px;
+    color:#fff;
+    border:none;
+}
+
+/* Cart page */
+/* cart css */
+.cart_container
+{
+    height: 90vh;
+
+    /* border: 1px solid black; */
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    overflow-y: auto;
+    /* background-color: #fff; */
+}
+.cart_card
+{
+    margin: auto;
+}
+
+.cart_product_img img
+{
+    width: 100%;
+    object-fit: cover;
+}
+.cart_product_details
+{
+    text-align: justify;
+}
+.cart_product_details p a
+{
+    text-decoration: none;
+    color: lightblue;
+}
+.cart_total
+{
+    padding: 5%;
+}
+
+
+/*product.ejs file css*/
+.product_card a{
+  text-decoration: none;
+  color:#4169E1;
+}
+.product_card
+{
+    width: 50;
+    border-radius: 20px ;
+}
+.product_card:hover
+{
+    transform: translateY(-10px);
+    transition: transform 0.5s;
+}
+
+.card_header img
+{
+    width: 100%;
+    margin-bottom: 5%;
+}
+.product_info
+{
+    text-align: left;
+}
+
+.product_info span
+{
+   font-size:15px;
+   font-family: 'Roboto';
+   
+}
+
+.cursor
+{
+    cursor: pointer;
+  
+}
+.cursor:hover
+{
+    opacity: 0.8;
+}
+
+
+/* PAGINATION  */
+.page{
+    text-align: center;
+    width:100vw;
+}
+ .pagination{
+    color:red;
+ }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <title>Document</title>
+  <style>
+
+#container{
+  line-height: 2rem;
+
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- <h1> AJAX EXperimentaion</h1> -->
+  <button id="button">GET DATA</button>
+  <!-- <h3 id="vani">hi hari</h3>
+    <input type="text"  id="in"/>
+    <input type="submit" id="btn" value="Submit"/> -->
+  <div id="container">
+
+  </div>
+  <script>
+    let btn = $('#button');
+    let container = $('#container')
+    let VAl = $('#in');
+function success(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+       let xhr = new XMLHttpRequest();
+       xhr.open('GET',`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=3060083610634f208e72a6bf976b75fd`,true);
+        xhr.onload = function(){
+       if(this.status == 200 && this.readyState == 4){         
+                   let Name =  this.responseText;                    
+                   let pin = JSON.parse(Name).results[0].components.postcode
+                   let arr = (JSON.parse(Name).results[0].formatted).split(",")
+                   let district = JSON.parse(Name).results[0].components.state_district
+                   let landmark = JSON.parse(Name).results[0].components.suburb
+                      let data = {
+                        "state" : arr[3],
+                        "pin": pin,
+                        "district":district,
+                        "landmark" : landmark
+                      }
+                      
+                      console.log(data)
+                    // console.log((JSON.parse(Name).results[0].formatted));
+                    container.html((JSON.parse(Name).results[0].formatted));
+       }
+      }
+      xhr.send();
+    }
+
+    function error(err) {
+      console.log('error');
+      if(err.code === 1){
+        alert('Allow access to geolocation to get location');
+      }
+      else{
+        alert("couldn't find you")
+      }
+    }
+
+    const options = {
+      enableHighAccuracy : true,
+      timeout : 5000,
+    }
+    navigator.geolocation.getCurrentPosition(success, error,options);
+</script>
+</body>
+
+</html>

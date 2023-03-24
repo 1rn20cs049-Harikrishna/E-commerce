@@ -1,0 +1,75 @@
+
+    <%- include('partials/header'); -%> <%# include header from partials  // commenting %>
+    <!-- Separation of Nav Bar and corousel  -->
+    <div class="container-fluid nav-corousel-sep">
+      <!-- <a class="mob-sep" href=""><span ><i class="fa-solid fa-ellipsis-vertical"></i></span></a> -->
+      <div class="sep-items">
+        <span>Products</span>
+        <span>Blogs</span>
+        <span>Categories</span>
+        <span>Top Sales</span>
+      </div>
+       <div class="sep-items1">
+          <a href=""><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+       </div>
+    </div>
+
+    <div class="container card mt-5 mb-5 cart_container">
+      <div class="row">
+        <% var i = 0; %>
+        <% var len = result[0].length %>
+        
+        <%    if (len > 0) {  while(i < len) { %>   
+         
+
+          <div class="col-lg-9 ">
+            <div class="row cart_card">
+              <div class="col-lg-3 col-sm-2 timg cart_product_img">
+                  <img src="/images/med3.png"  alt="">
+              </div>
+              <div class="col-lg-6 col-sm-6 cart_product_details">
+                <h5><%= result[0][i].name %></h5>
+                <p>Price : <%= result[0][i].price %></p>
+                <p>Instock</p>
+                <p>Quantity : <%= result[0][i].ind_total %></p>
+                <p><a href="delete-product?p_id=<%= result[0][i].id %>">Delete | </a> <a href="">Proceed to buy |</a></p>  
+
+              </div>
+            </div>
+            <hr>
+           
+        </div>  
+        <% i++  }%>  
+        </div>
+        </div> 
+        
+
+        <div class="card cart_total col-6 ">
+          <p>Sub Total (n-items) : <span style="color:#FF6700">  <%=  total_quantity  %> </span> </p>
+          <p>Sub Total : &#8377; <span style="color:#FF6700"> <%=  total_price %> </span></p>
+          <div class="delivery_address">
+            <i class="fa-solid fa-location-arrow"></i>
+            <span><strong>Delivery Address : </strong>xxxx-yyyyy-zzzzz</span>
+            <p>Deliverd in 2-3 days</p>
+          </div>
+          <button class="cart_btn btn btn-outline-warning" >Proceed To Buy</button>
+        </div>
+        <hr>
+       
+      <!-- </div>
+      
+    </div> -->
+
+<!-- </section> -->
+<% } else { %>
+
+  <div class="vh-100">
+    <h1 class="m-auto " style="font-family:Roboto ;">No products in cart </h1>
+    <img src="/images/cart.png"  alt="">
+  </div>
+
+      <%   }    %>
+<!-- Footer -->
+<%- include('partials/footer'); -%> <%# include footer from partials  // commenting %>
+</body>
+</html>
